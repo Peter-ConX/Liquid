@@ -172,17 +172,15 @@ body {
   border-color: rgba(173, 198, 255, 0.8) !important;
 }
 
-/* Stitch design integration section */
-#stitch-section {
+/* Custom Interactive Briefing Section Styles */
+#briefing-section {
   position: relative;
   z-index: 30;
   width: 100%;
-  min-height: 100vh;
-  background-color: #131313;
-  margin-top: -1px; /* overlap to prevent seam lines */
+  background-color: #07070a;
+  margin-top: -1px;
 }
 
-/* Custom styles from Stitch template */
 .reveal-text {
   opacity: 0;
   transform: translateY(30px);
@@ -193,3 +191,29 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* SVG Animations for Radar/Wave */
+@keyframes waveMove {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-wave-path {
+  stroke-dasharray: 8 4;
+  animation: waveMove 3s linear infinite;
+}
+
+/* Node card hover transitions */
+.node-card {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.node-card:hover {
+  box-shadow: 0 0 20px rgba(184, 212, 232, 0.03);
+  transform: translateX(4px);
+}
+

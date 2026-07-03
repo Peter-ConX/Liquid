@@ -135,19 +135,13 @@
     </button>
   </nav>
 
-  <!-- Sticky Side Indicator Dots (From Stitch Deep Space Navigation) -->
+  <!-- Sticky Side Indicator Dots (Custom 2-Node Navigation) -->
   <aside class="fixed right-void-md top-1/2 -translate-y-1/2 flex flex-col items-center gap-void-sm z-40">
-    <a class="text-primary scale-125 transition-all duration-700 ease-out" href="#" title="Launch">
+    <a class="text-primary scale-125 transition-all duration-700 ease-out cursor-pointer" title="Launch Sequence" data-target="hero-scroll-container">
       <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
     </a>
-    <a class="text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out" href="#" title="Orbit">
-      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">wb_sunny</span>
-    </a>
-    <a class="text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out" href="#" title="Deep Space">
-      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
-    </a>
-    <a class="text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out" href="#" title="Event Horizon">
-      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">brightness_empty</span>
+    <a class="text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out cursor-pointer" title="Mission Archive" data-target="briefing-section">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
     </a>
   </aside>
 
@@ -191,231 +185,198 @@
     </div>
   </div>
 
-  <!-- LAYER 3 — Stitch Design Integration (Deep Space Navigation content flowing below the hero) -->
-  <section id="stitch-section" class="relative z-10 w-full min-h-screen overflow-hidden">
+  <!-- LAYER 3 — Custom Interactive Mission Briefing Section (Replaces both imported Stitch layouts) -->
+  <section id="briefing-section" class="relative z-10 w-full min-h-screen bg-[#07070a] text-white py-32 px-void-md md:px-void-lg overflow-hidden">
+    <!-- Subtle Grid Background -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"></div>
     
-    <!-- Background Image Layer -->
-    <div class="absolute inset-0 z-0">
-      <img alt="Deep space starfield" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqXYEDNqwpaOZ2OSGQClBSHUZW0Viqk3Mqsem-8WymxVJI8ijKQ8xBLnhp_AQ1MwMcJSCnWJ38FTGMZmXZ2N5l-wXCnlputkjFKWughF61s6ztyY5oCnWO99vmof-h2c3B0XZ6aZl88Cx1nUDxXDxw0qm1F4iOvAGFp123BtVe03h2z85pMgLyzqSvLjSBxoIxPx_cZlCBUyk0dZw4GWJKNnz-3fPZUyNoVmhBB6ZoId4csOqG_02o0TzoEMEpbWkRCulPkmhrTsc"/>
-    </div>
+    <!-- Cinematic Glowing Background Orbs -->
+    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
-    <!-- Main Content Container -->
-    <div id="stitch-content-container" class="relative z-10 w-full min-h-screen flex items-center justify-center pt-void-xl px-void-md md:px-void-lg">
-      <section class="max-w-[800px] w-full text-center">
-        <h1 class="reveal-text font-display-xl-mobile md:font-display-xl text-primary uppercase tracking-[0.1em] md:tracking-[0.2em] leading-tight drop-shadow-lg">
-          Into the <br class="md:hidden"/> Great Unknown
-        </h1>
-      </section>
-    </div>
-  </section>
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <header class="mb-16 reveal-text">
+        <span class="text-xs font-semibold text-[#F5C97B] tracking-[0.4em] uppercase block mb-3">MISSION ARCHIVE DECLASSIFIED</span>
+        <h2 class="font-display-xl text-3xl md:text-5xl font-black text-white tracking-[0.1em] uppercase mb-6">THE AETHERIS DECONSTRUCTION</h2>
+        <div class="w-full h-px bg-gradient-to-r from-white/20 via-white/5 to-transparent"></div>
+      </header>
 
-  <!-- LAYER 4 — Federal Modern Design Integration (Chronicle News Section flowing below the Cosmic navigation) -->
-  <section id="chronicle-section" class="relative z-20 w-full bg-[#fcf9f8] text-[#1c1b1b] font-body-md overflow-hidden pb-12">
-    
-    <!-- TopAppBar (Breaking News Ticker) -->
-    <div class="bg-secondary dark:bg-secondary-container text-on-secondary dark:text-on-secondary-container font-label-lg text-label-lg font-bold relative w-full h-10 flat no shadows flex items-center px-margin-desktop overflow-hidden whitespace-nowrap cursor-default">
-      <div class="flex items-center gap-2 mr-4 bg-secondary z-10 px-2 h-full absolute left-margin-desktop shadow-[10px_0_10px_-5px_#bb0024]">
-        <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">campaign</span>
-        <span class="uppercase tracking-widest text-white">BREAKING</span>
-      </div>
-      <div class="ticker-wrapper pl-32">
-        <div class="ticker-content text-white">
-          BREAKING: Global markets respond to new economic policy shifts. &nbsp;&nbsp; | &nbsp;&nbsp; Senate passes landmark technology infrastructure bill in rare bipartisan vote. &nbsp;&nbsp; | &nbsp;&nbsp; Major tech conglomerate announces restructuring amidst regulatory scrutiny.
-        </div>
-      </div>
-    </div>
-
-    <!-- TopNavBar (Chronicle Brand Menu) -->
-    <nav class="bg-background dark:bg-on-background border-b border-border-standard dark:border-outline relative w-full z-30 flat no shadows text-[#1c1b1b]">
-      <div class="max-w-[1280px] mx-auto px-margin-desktop flex flex-col items-center py-4">
-        <!-- Branding -->
-        <div class="w-full flex justify-between items-center mb-6">
-          <div class="w-24"></div> <!-- Spacer -->
-          <a class="font-display-xl text-display-xl font-black text-primary dark:text-primary-fixed tracking-tighter uppercase text-center text-[#000a1e]" href="#">
-            CHRONICLE
-          </a>
-          <div class="w-24 flex justify-end gap-4 text-primary dark:text-primary-fixed text-[#000a1e]">
-            <button class="hover:text-secondary transition-colors duration-200">
-              <span class="material-symbols-outlined">search</span>
-            </button>
-            <button class="hover:text-secondary transition-colors duration-200">
-              <span class="material-symbols-outlined">person</span>
-            </button>
-          </div>
-        </div>
-        <!-- Navigation Links -->
-        <div class="w-full flex justify-center items-center relative">
-          <ul class="flex gap-8 font-label-lg text-label-lg uppercase text-[#44474e]">
-            <li><a class="text-[#000a1e] border-b-2 border-secondary pb-1 opacity-80" href="#">Politics</a></li>
-            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">World</a></li>
-            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Business</a></li>
-            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Tech</a></li>
-            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Opinion</a></li>
-          </ul>
-          <button class="absolute right-0 bg-[#002147] text-white font-label-md text-label-md uppercase px-4 py-2 hover:bg-opacity-90 transition-all shadow-sm">
-            SUBSCRIBE
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Editorial Content -->
-    <main class="max-w-[1280px] mx-auto px-margin-desktop pt-12 pb-24 text-[#1c1b1b]">
-      <!-- Featured Hero Section -->
-      <section class="mb-16 border-b border-border-standard pb-12">
-        <div class="w-full h-[600px] mb-6 overflow-hidden bg-surface-subtle">
-          <img class="w-full h-full object-cover" alt="Neoclassical facade of the White House in Washington D.C. under clear blue daytime sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXEIe2Gd1j7vR4dxMPqbq53XGKVKXihsBNrRTvheqNll0imXRYGnRtXI1rMxDQMTvI0cNgAnOkvP1VMSOmENCmvgSnIN8X0nOjhCr_SEVeizVlxmaA771E_cJLXsxiyrVJZL7RSatspzSdkfVrP7_kSWI_LREjIqRZgrfNZLOQRz9CDYCYobxrgC2J3Lzi1XV35rPDv4gAfPvzVWi9Ipecw74vxaVrQvPoafoutFeeAfrjOk6ap11DilksL9B4gOXT5-dMJUerWpY"/>
-        </div>
-        <div class="max-w-4xl mx-auto text-center">
-          <span class="inline-block bg-[#F5F5F5] text-[#002147] px-3 py-1 font-label-md text-label-md uppercase tracking-wider mb-4 border-l-4 border-[#bb0024]">National Affairs</span>
-          <h1 class="font-display-xl text-display-xl text-[#000a1e] mb-6 leading-tight">New Horizons: A Nation Looks Up</h1>
-          <p class="font-body-lg text-body-lg text-[#44474e] max-w-3xl mx-auto leading-relaxed">
-            In a sweeping address from the Rose Garden, the administration outlines a comprehensive strategy focusing on technological innovation, infrastructure revitalization, and renewed global partnerships. Critics point to ambitious timelines, while supporters hail it as a necessary pivot for the decade ahead.
-          </p>
-          <div class="mt-6 flex items-center justify-center gap-4 text-[#74777f] font-label-md text-label-md uppercase tracking-wide">
-            <span class="text-[#000a1e] font-bold">By Eleanor Vance</span>
-            <span>•</span>
-            <span>October 24, 2024</span>
-            <span>•</span>
-            <span>7 Min Read</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Two Column Layout -->
-      <div class="flex flex-col lg:flex-row gap-gutter">
-        <!-- Left Column: Secondary Stories Grid (2/3 width) -->
-        <div class="w-full lg:w-2/3">
-          <div class="flex items-center justify-between border-b-2 border-[#000a1e] pb-2 mb-8">
-            <h2 class="font-headline-md text-headline-md text-[#000a1e] uppercase tracking-tight">Latest Report</h2>
-            <a class="font-label-md text-label-md text-[#bb0024] hover:underline flex items-center gap-1 uppercase" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10">
-            <!-- Story Card 1 -->
-            <article class="flex flex-col group cursor-pointer">
-              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Expansive solar farm panels at morning dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqqkLFVyAPeLdEr6X7QuhdRyf5_7nk0dRGfnthndf_BFjSNBwujI5gYfQT0qsY1NwGe77kL93GlXORTxt-ogt3GjM2KljieYoeBU_nMY6dpJ9PsYUYX5tuk48DHpijxzyT_DjPiSN7dTowiYDrkKcqFmGjzdvjyB2etJUqBjCG_HR3asj8fMvtOKY2hj1KcnxeFOL1Uc8YeEX6QXxEX-9FXnCtVW_WA84S3J3pEwvxp8zQ7UbIxbeqNtY1fFSlCS5JHtqan1-yUc"/>
+      <!-- Main Two-Column Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        
+        <!-- Left Panel: Interactive Telemetry & Signal Core (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6 reveal-text">
+          <div class="bg-white/[0.02] backdrop-blur-md border border-white/5 p-6 rounded-sm flex flex-col gap-6">
+            <div class="flex justify-between items-center border-b border-white/5 pb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
+                <span class="font-label-caps text-label-caps tracking-widest text-[#B8D4E8] text-xs">SIGNAL COHERENCE DECAY</span>
               </div>
-              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Tech &amp; Energy</span>
-              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Renewables Surge Past Coal in Quarterly Energy Report</h3>
-              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">Solar and wind energy output hit record highs this past quarter, officially surpassing legacy fossil fuels in several key industrial regions, signaling a permanent shift in grid reliance.</p>
-              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">2 Hours Ago</span>
-            </article>
-            <!-- Story Card 2 -->
-            <article class="flex flex-col group cursor-pointer">
-              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Stock exchange floor with red and green numbers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAg663Oh4mH09bDs98gTUYzQXPrBREi6p4iMPyzEYPGr2nj4ahYnn_vmgCAoOId8Qlr9H-p0vPXU2uO378gfSTAl_RfDw155owMW26Zp06vGmC9LNwqaV6cFA2ZmMY6JgiaaWHCwIM-H_4I5TIOS0XNl-YpaR2CQ51HwyguifBmZhHD0TZaQWl-hyM1dYMaIrfbnmU616Slso5ncNKxJB4XnnI34AjJTF4rmXMBj-fHpwAMxEWvJVu_MV-G_XAEb6AR9zvJuLfKqw"/>
-              </div>
-              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Global Markets</span>
-              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Asian Markets Rally on De-escalation Hopes</h3>
-              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">Investors breathed a sigh of relief as diplomatic channels reopened overnight, prompting a significant bounce-back in key indices across Tokyo, Hong Kong, and Seoul.</p>
-              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">5 Hours Ago</span>
-            </article>
-            <!-- Story Card 3 -->
-            <article class="flex flex-col group cursor-pointer">
-              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Futuristic autonomous electric vehicle prototype" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVuSdP_ueAD-iYtZd4xpaB2ycx0T4ibFnWvbjaD4Xgl4mEIPlvbqeBsRzp80xrMjFVxJKxyUeuQTeQgoRHVJIqpFnDiIdNj8MxDcTLtw2OKnMImU-zbjfALRc1ddyYxhRLd8_P0ifZ7H6a-eweF52a3oBgGYlm6BOlxd8EbMfQJ9eqFq375aS8gSElyiSvpRZ6ReTVntTB3qOyEAkmBQw-MCZ9-lfpihhgasW6FyVY9rn0JJa8l2W3uxzPnWY-U-Rr-iJnXCR8poc"/>
-              </div>
-              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Business</span>
-              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Auto Giant Unveils Fully Autonomous Fleet Strategy</h3>
-              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">In a bid to leapfrog tech competitors, Detroit's largest automaker has committed to a multi-billion dollar pivot entirely focused on driverless, electric commercial fleets by 2030.</p>
-              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">1 Day Ago</span>
-            </article>
-            <!-- Story Card 4 (Text Only) -->
-            <article class="flex flex-col group cursor-pointer border-t border-border-standard pt-6 mt-2">
-              <div class="flex flex-col md:flex-row gap-6">
-                <div class="flex-1">
-                  <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2 block">Opinion</span>
-                  <h3 class="font-headline-md text-headline-md text-[#000a1e] leading-snug mb-2 group-hover:text-[#166DFC] transition-colors">The Hidden Costs of the Suburban Resurgence</h3>
-                  <p class="font-body-md text-body-md text-[#44474e] mb-2 leading-relaxed">As remote work normalizes, the exodus from city centers continues. But the environmental and social toll of sprawling infrastructure threatens to undermine the perceived gains in quality of life.</p>
-                  <span class="font-caption text-caption text-[#74777f] uppercase tracking-wide">By Thomas Aris • Oct 23</span>
-                </div>
-                <div class="hidden md:block w-48 h-32 bg-surface-subtle shrink-0">
-                  <img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all" alt="Aerial view of suburbs roads" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkd4TXWqvVZ1zBWzd2coo6QBFlLBK8PjiTZvK9030OnvqDPZcP8qT0ctC0Khtk6Bl72xKx57zRVqshGsd9AQsUKzkeGWA0P12gpw72TkUhSdFW_brWYn0COPZ87uL5LIYiDseBHoZwBfMh0ScOXJOKb8H-MMrB6_kaiojrEsML8vkXsLKwLIbvOXsCgVvhh5pbRM-lO3kQrk6QvIfLsAJ7ByHn-ocoLP48mX1dw15s1n56KrFHmxhLNkvVTeHtnURTnMIHfarXsAs"/>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-        <!-- Right Column: Sidebar (1/3 width) -->
-        <aside class="w-full lg:w-1/3 flex flex-col gap-10 border-l border-border-standard pl-0 lg:pl-gutter">
-          <!-- Trending Section -->
-          <div>
-            <div class="flex items-center gap-2 border-b-2 border-[#000a1e] pb-2 mb-6">
-              <span class="material-symbols-outlined text-[#bb0024]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
-              <h2 class="font-headline-md text-headline-md text-[#000a1e] uppercase tracking-tight">Trending Now</h2>
+              <span class="font-mono text-xs text-white/40">FREQ: 148.9 GHz</span>
             </div>
-            <ul class="flex flex-col">
-              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
-                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">1</span>
-                <div>
-                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Supreme Court Agrees to Hear Pivotal Data Privacy Case</h4>
-                  <span class="font-caption text-caption text-[#74777f] uppercase">Politics</span>
-                </div>
-              </li>
-              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
-                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">2</span>
-                <div>
-                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Euro Drops Below Dollar Parity for First Time in Two Years</h4>
-                  <span class="font-caption text-caption text-[#74777f] uppercase">Business</span>
-                </div>
-              </li>
-              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
-                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">3</span>
-                <div>
-                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Breakthrough in Solid-State Battery Tech Promised by Startup</h4>
-                  <span class="font-caption text-caption text-[#74777f] uppercase">Tech</span>
-                </div>
-              </li>
-              <li class="py-4 group cursor-pointer flex gap-4 items-start">
-                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">4</span>
-                <div>
-                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Analysis: What the Latest Job Numbers Really Mean for the Fed</h4>
-                  <span class="font-caption text-caption text-[#74777f] uppercase">Economy</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- Newsletter Signup -->
-          <div class="bg-[#F5F5F5] p-6 border-t-4 border-[#000a1e]">
-            <h3 class="font-headline-md text-headline-md text-[#000a1e] mb-2">The Daily Briefing</h3>
-            <p class="font-body-md text-body-md text-[#44474e] mb-4">Start your day with the stories you need to know. Delivered straight to your inbox.</p>
-            <form class="flex flex-col gap-3">
-              <input class="w-full bg-white border-b border-[#c4c6cf] focus:border-[#000a1e] focus:ring-0 px-3 py-2 font-body-md outline-none rounded-none placeholder-[#74777f]" placeholder="Email address" type="email"/>
-              <button class="bg-[#000a1e] text-white font-label-lg text-label-lg uppercase w-full py-3 hover:bg-opacity-90 transition-colors shadow-sm" type="button">Sign Up</button>
-            </form>
-          </div>
-        </aside>
-      </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#f0edec] dark:bg-surface-container-highest w-full mt-24 border-t border-border-standard dark:border-outline flat no shadows text-[#000a1e]">
-      <div class="max-w-[1280px] mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-start">
-        <div class="mb-8 md:mb-0">
-          <a class="font-headline-md text-headline-md font-bold text-[#000a1e] block mb-4 uppercase tracking-tighter" href="#">CHRONICLE</a>
-          <p class="font-body-md text-body-md text-[#44474e] max-w-xs">Precise, Authoritative, Essential. Delivering the news that shapes our world.</p>
+            <!-- Animated Radar / Waveform SVG -->
+            <div class="w-full h-48 bg-black/40 border border-white/5 relative flex items-center justify-center overflow-hidden rounded-sm">
+              <svg class="w-full h-full opacity-60" viewBox="0 0 400 200">
+                <!-- Circular radar rings -->
+                <circle cx="200" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                <circle cx="200" cy="100" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 4"/>
+                <circle cx="200" cy="100" r="20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+                
+                <!-- Grid coordinates -->
+                <path d="M 50 100 L 350 100 M 200 20 L 200 180" stroke="rgba(255,255,255,0.02)" stroke-width="1" />
+                
+                <!-- Dynamic Signal Wave -->
+                <path d="M 0 100 Q 50 20, 100 100 T 200 100 T 300 100 T 400 100" fill="none" stroke="url(#wave-gradient)" stroke-width="2" class="animate-wave-path" />
+                
+                <defs>
+                  <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#B8D4E8"/>
+                    <stop offset="50%" stop-color="#E8F0F5"/>
+                    <stop offset="100%" stop-color="#F5C97B"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="absolute bottom-3 left-3 bg-black/80 px-2.5 py-1 border border-white/5 rounded-xs font-mono text-[10px] text-green-400 tracking-wider">
+                COHERENCE: 98.42%
+              </div>
+            </div>
+
+            <!-- Terminal Stream Logs -->
+            <div class="flex flex-col gap-2">
+              <span class="font-label-caps text-label-caps text-[10px] text-white/40 tracking-[0.2em] uppercase">SYSTEM EVENT LOGS</span>
+              <div class="h-32 bg-black/60 border border-white/5 p-3 rounded-sm font-mono text-[11px] text-[#A8BCC8] overflow-y-auto flex flex-col gap-1 leading-relaxed" id="terminal-stream">
+                <div>[04:12:09] SYSTEM ONLINE. SCANNERS READY.</div>
+                <div>[04:12:11] INITIALIZING DEEP STARFIELD PROBE...</div>
+                <div>[04:12:14] DISTORTION DETECTED. VECTOR: event_horizon_04</div>
+                <div class="text-amber-300">[04:12:18] WARNING: COHERENCE FLUX DETECTED</div>
+                <div class="text-green-400">[04:12:21] RESOLVING TARGET COORDINATES: 38.8977° N, 77.0365° W</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col gap-8 md:flex-row md:gap-16 font-label-md text-label-md text-[#44474e]">
-          <ul class="flex flex-col gap-3">
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">About Us</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Contact</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Careers</a></li>
-          </ul>
-          <ul class="flex flex-col gap-3">
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Privacy Policy</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Terms of Service</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Archive</a></li>
-          </ul>
-          <ul class="flex flex-col gap-3">
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all font-bold" href="#">Newsletters</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Podcasts</a></li>
-            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">RSS Feeds</a></li>
-          </ul>
+
+        <!-- Right Panel: Interactive 5 Journey Nodes (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-4 reveal-text">
+          <span class="font-label-caps text-label-caps text-xs text-[#F5C97B] tracking-[0.3em] uppercase block mb-1">JUMP TO CHRONOLOGY</span>
+          <div class="flex flex-col gap-3">
+            
+            <!-- Node 1 -->
+            <button class="node-card w-full text-left bg-white/[0.01] hover:bg-white/[0.03] border border-white/5 hover:border-white/10 p-4 rounded-sm flex items-center justify-between transition-all duration-300 group cursor-pointer" data-progress="0.0">
+              <div class="flex gap-6 items-center">
+                <span class="font-mono text-[#B8D4E8] text-sm font-bold tracking-widest bg-white/[0.03] w-10 h-10 rounded-full flex items-center justify-center border border-white/5">01</span>
+                <div>
+                  <h4 class="font-headline-lg font-bold text-white text-sm tracking-widest uppercase mb-1">THE INITIAL SIGNAL</h4>
+                  <p class="font-body-md text-xs text-white/50 leading-normal">Liquid cursor-reactive distortion before the launch.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#B8D4E8] opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+            </button>
+
+            <!-- Node 2 -->
+            <button class="node-card w-full text-left bg-white/[0.01] hover:bg-white/[0.03] border border-white/5 hover:border-white/10 p-4 rounded-sm flex items-center justify-between transition-all duration-300 group cursor-pointer" data-progress="0.30">
+              <div class="flex gap-6 items-center">
+                <span class="font-mono text-[#E8F0F5] text-sm font-bold tracking-widest bg-white/[0.03] w-10 h-10 rounded-full flex items-center justify-center border border-white/5">02</span>
+                <div>
+                  <h4 class="font-headline-lg font-bold text-white text-sm tracking-widest uppercase mb-1">VISOR REFLECTION ZOOM</h4>
+                  <p class="font-body-md text-xs text-white/50 leading-normal">Deep exploration inside the reflection of the helmet glass.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#E8F0F5] opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+            </button>
+
+            <!-- Node 3 -->
+            <button class="node-card w-full text-left bg-white/[0.01] hover:bg-white/[0.03] border border-white/5 hover:border-white/10 p-4 rounded-sm flex items-center justify-between transition-all duration-300 group cursor-pointer" data-progress="0.48">
+              <div class="flex gap-6 items-center">
+                <span class="font-mono text-white text-sm font-bold tracking-widest bg-white/[0.03] w-10 h-10 rounded-full flex items-center justify-center border border-white/5">03</span>
+                <div>
+                  <h4 class="font-headline-lg font-bold text-white text-sm tracking-widest uppercase mb-1">OPEN SPACE DISSOLVE</h4>
+                  <p class="font-body-md text-xs text-white/50 leading-normal">Dissolving into the vast, absolute quiet of open space.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-white opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+            </button>
+
+            <!-- Node 4 -->
+            <button class="node-card w-full text-left bg-white/[0.01] hover:bg-white/[0.03] border border-white/5 hover:border-white/10 p-4 rounded-sm flex items-center justify-between transition-all duration-300 group cursor-pointer" data-progress="0.68">
+              <div class="flex gap-6 items-center">
+                <span class="font-mono text-[#FFD9B3] text-sm font-bold tracking-widest bg-white/[0.03] w-10 h-10 rounded-full flex items-center justify-center border border-white/5">04</span>
+                <div>
+                  <h4 class="font-headline-lg font-bold text-white text-sm tracking-widest uppercase mb-1">THE EVENT HORIZON</h4>
+                  <p class="font-body-md text-xs text-white/50 leading-normal">Accelerating into the gravitational pull of the singularity.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#FFD9B3] opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+            </button>
+
+            <!-- Node 5 -->
+            <button class="node-card w-full text-left bg-white/[0.01] hover:bg-white/[0.03] border border-white/5 hover:border-white/10 p-4 rounded-sm flex items-center justify-between transition-all duration-300 group cursor-pointer" data-progress="0.90">
+              <div class="flex gap-6 items-center">
+                <span class="font-mono text-[#F5C97B] text-sm font-bold tracking-widest bg-white/[0.03] w-10 h-10 rounded-full flex items-center justify-center border border-white/5">05</span>
+                <div>
+                  <h4 class="font-headline-lg font-bold text-white text-sm tracking-widest uppercase mb-1">WHITE HOUSE ARRIVAL</h4>
+                  <p class="font-body-md text-xs text-white/50 leading-normal">The white flash settles into the familiar exterior of dawn.</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-[#F5C97B] opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Narrative & Telemetry Grid (Fades in) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/5 pt-12 reveal-text mb-16">
+        <div>
+          <h3 class="font-headline-md font-bold text-[#F5C97B] text-base tracking-[0.2em] uppercase mb-4">THE RECONSTRUCTION LOG</h3>
+          <p class="font-body-lg text-sm text-white/70 leading-relaxed mb-4">
+            The event log indicates that the signal originated from a cosmic anomaly located outside our solar boundaries. The data transmission, intercepted during the black hole event horizon passage, resolves directly into coordinate data aligning with the neoclassical facade of the White House in Washington, D.C.
+          </p>
+          <p class="font-body-lg text-sm text-white/70 leading-relaxed">
+            This contact represents a closed-loop temporal bridge. As the visor reflection zoom collapses, the observer enters the singularity, and the output signal is received before the launch sequence began.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-headline-md font-bold text-[#B8D4E8] text-base tracking-[0.2em] uppercase mb-4">ORBITAL DATA POINTS</h3>
+          <div class="flex flex-col gap-3 font-mono text-xs">
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-white/40">SYSTEM RESOLVE STATUS</span>
+              <span class="text-green-400 font-bold">CONTACT RESOLVED</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-white/40">COORDINATE MAPPING</span>
+              <span class="text-white">38.8977° N, 77.0365° W</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-white/40">TEMPORAL SHIFT RESOLUTION</span>
+              <span class="text-white">-43.2 MILLISECONDS</span>
+            </div>
+            <div class="flex justify-between border-b border-white/5 pb-2">
+              <span class="text-white/40">ACCRETION COHERENCE RATE</span>
+              <span class="text-white">0.999847 SIGMA</span>
+            </div>
+            <div class="flex justify-between pb-2">
+              <span class="text-white/40">MISSION STATUS</span>
+              <span class="text-[#F5C97B] font-bold">AETHERIS COMPLETED</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="max-w-[1280px] mx-auto px-margin-desktop py-6 border-t border-border-standard dark:border-outline font-caption text-caption text-[#74777f]">
-        © 2024 Chronicle Media Group. All rights reserved.
+
+    </div>
+
+    <!-- Customized Premium Footer -->
+    <footer class="relative z-10 max-w-[1200px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-white/5 bg-transparent mt-24">
+      <div class="font-label-caps text-label-caps text-white/50 tracking-[0.2em] text-[10px] uppercase">
+        © 2026 AETHERIS MISSION COMMAND. ALL RIGHTS RESERVED.
+      </div>
+      <div class="flex gap-6 font-mono text-[11px] uppercase tracking-wider text-white/50">
+        <a class="hover:text-[#F5C97B] transition-colors" href="#">System Status</a>
+        <a class="hover:text-[#B8D4E8] transition-colors" href="#">Command Protocols</a>
+        <a class="hover:text-white transition-colors" href="#">Data Feed</a>
       </div>
     </footer>
   </section>

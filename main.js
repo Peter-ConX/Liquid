@@ -428,13 +428,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Sticky side indicator activation logic matching scroll positions
+    // Sticky side indicator activation and scroll click logic
     const sideDots = document.querySelectorAll("aside a");
     const sections = [
       document.getElementById("hero-scroll-container"),
-      document.getElementById("stitch-section"),
-      document.getElementById("chronicle-section")
+      document.getElementById("briefing-section")
     ];
+
+    sideDots.forEach(dot => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = dot.getAttribute("data-target");
+        const targetSec = document.getElementById(targetId);
+        if (targetSec) {
+          window.scrollTo({
+            top: targetSec.offsetTop,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
 
     window.addEventListener("scroll", () => {
       let currentIdx = 0;
@@ -447,12 +460,31 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       sideDots.forEach((dot, idx) => {
-        if (idx === currentIdx || (idx === 3 && currentIdx === 2)) {
-          dot.className = "text-primary scale-125 transition-all duration-700 ease-out";
+        if (idx === currentIdx) {
+          dot.className = "text-primary scale-125 transition-all duration-700 ease-out cursor-pointer";
           dot.querySelector("span").style.fontVariationSettings = "'FILL' 1";
         } else {
-          dot.className = "text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out";
+          dot.className = "text-white/20 scale-100 hover:text-primary/50 transition-all duration-700 ease-out cursor-pointer";
           dot.querySelector("span").style.fontVariationSettings = "'FILL' 0";
+        }
+      });
+    });
+
+    // Jump-to-chronology click handler for Node Cards
+    const nodeCards = document.querySelectorAll(".node-card");
+    nodeCards.forEach(card => {
+      card.addEventListener("click", () => {
+        const targetProgressValue = parseFloat(card.getAttribute("data-progress"));
+        const scrollContainer = document.getElementById("hero-scroll-container");
+        if (scrollContainer) {
+          const startY = scrollContainer.offsetTop;
+          const totalHeight = scrollContainer.scrollHeight - window.innerHeight;
+          const targetY = startY + (totalHeight * targetProgressValue);
+          
+          window.scrollTo({
+            top: targetY,
+            behavior: "smooth"
+          });
         }
       });
     });
