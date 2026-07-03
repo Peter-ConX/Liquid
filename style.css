@@ -1,0 +1,204 @@
+/* Custom styles for Liquid Website */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap');
+
+:root {
+  --color-bg: #000000;
+  --color-surface: #131313;
+  --color-primary: #ffffff;
+  --color-secondary: #adc6ff;
+  --color-electric-blue: #3b82f6;
+  --color-silver: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  height: auto;
+}
+
+/* Hide scrollbar for clean cinematic look, but keep functionality */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.9);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Loading Overlay */
+#loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s cubic-bezier(0.76, 0, 0.24, 1), visibility 1s;
+}
+
+.loader-glow-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-silver);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 25px rgba(173, 198, 255, 0.8);
+  }
+}
+
+/* Scroll Container Setup */
+#hero-scroll-container {
+  position: relative;
+  width: 100%;
+  height: 600vh; /* 6x viewport height for 5 scenes + transitions */
+  background-color: #000000;
+}
+
+#scroll-sequence-sticky {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layer 1: WebGL Liquid Canvas */
+#liquid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Video Containers */
+.video-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Active Video Overlay */
+.video-layer.active {
+  pointer-events: auto;
+}
+
+/* Scene Text Overlays */
+.scene-text-overlay {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.scene-text-line {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scene-text-line.sans {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+}
+
+.scene-text-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* White Flash Overlay */
+#white-flash {
+  position: absolute;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* Glow hover effect for buttons */
+.glow-hover:hover {
+  box-shadow: 0 0 15px rgba(173, 198, 255, 0.5);
+  border-color: rgba(173, 198, 255, 0.8) !important;
+}
+
+/* Stitch design integration section */
+#stitch-section {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  min-h-screen;
+  background-color: #131313;
+  margin-top: -1px; /* overlap to prevent seam lines */
+}
+
+/* Custom styles from Stitch template */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
