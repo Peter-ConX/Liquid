@@ -310,8 +310,22 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(render);
 
     const currentTimeSec = time * 0.001;
-    const deltaTime = currentTimeSec - lastTime;
+    let deltaTime = currentTimeSec - lastTime;
+    if (deltaTime > 0.1) deltaTime = 0.1; // Clamp delta to avoid massive scroll jumps after tab focus loss
     lastTime = currentTimeSec;
+
+    // Escalator auto-scroll through the pinned sequence (Scene 1 to Scene 5)
+    if (isExperienceStarted) {
+      const container = document.getElementById("hero-scroll-container");
+      if (container) {
+        const maxScroll = container.offsetTop + container.offsetHeight - window.innerHeight;
+        if (window.scrollY < maxScroll) {
+          const scrollSpeed = maxScroll / 25; // 25 seconds total play time
+          const amount = scrollSpeed * deltaTime;
+          window.scrollBy(0, amount);
+        }
+      }
+    }
 
     // Smoothly interpolate mouse coordinates for general tracking
     mouse.x += (mouse.targetX - mouse.x) * 0.1;
