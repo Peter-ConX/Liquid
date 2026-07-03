@@ -1,4 +1,4 @@
-/* Custom styles for Liquid Website */
+/* Custom styles for Liquid Website - Image Sequence version */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap');
 
 :root {
@@ -39,7 +39,17 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Loading Overlay */
+/* Intro Canvas Overlay */
+#intro-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background-color: transparent;
+  transition: opacity 1s ease-out;
+}
+
+/* Loading Overlay (shows during image preload phase, before intro plays) */
 #loader-overlay {
   position: fixed;
   inset: 0;
@@ -49,7 +59,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 1s cubic-bezier(0.76, 0, 0.24, 1), visibility 1s;
+  transition: opacity 0.8s cubic-bezier(0.76, 0, 0.24, 1), visibility 0.8s;
 }
 
 .loader-glow-dot {
@@ -94,41 +104,21 @@ body {
   justify-content: center;
 }
 
-/* Layer 1: WebGL Liquid Canvas */
-#liquid-canvas {
+/* Layer 2: Sequence Render Canvas */
+#sequence-canvas {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
-  pointer-events: none;
-  transition: opacity 0.5s ease-out;
-}
-
-/* Video Containers */
-.video-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 5;
-  opacity: 0;
   pointer-events: none;
-  will-change: transform, opacity;
-}
-
-/* Active Video Overlay */
-.video-layer.active {
-  pointer-events: auto;
 }
 
 /* Scene Text Overlays */
 .scene-text-overlay {
   position: absolute;
-  z-index: 20;
+  z-index: 15;
   inset: 0;
   display: flex;
   align-items: center;
@@ -145,7 +135,7 @@ body {
   color: #ffffff;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 25px rgba(0, 0, 0, 0.95);
   opacity: 0;
   transform: translateY(20px);
   will-change: opacity, transform;
@@ -169,7 +159,7 @@ body {
   position: absolute;
   inset: 0;
   background-color: #ffffff;
-  z-index: 30;
+  z-index: 25;
   opacity: 0;
   pointer-events: none;
   will-change: opacity;
@@ -184,9 +174,9 @@ body {
 /* Stitch design integration section */
 #stitch-section {
   position: relative;
-  z-index: 40;
+  z-index: 30;
   width: 100%;
-  min-h-screen;
+  min-height: 100vh;
   background-color: #131313;
   margin-top: -1px; /* overlap to prevent seam lines */
 }

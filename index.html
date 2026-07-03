@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Aetheris - Pinned Celestial Voyage</title>
+  <title>Aetheris - Celestial Voyage</title>
   
   <!-- Tailwind CSS & Plugins -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -104,18 +104,21 @@
     }
   </script>
 </head>
-<body class="bg-[#000000] text-[#ffffff] min-h-screen selection:bg-secondary/30 selection:text-white">
+<body class="bg-[#000000] text-[#ffffff] min-h-screen selection:bg-secondary/30 selection:text-white overflow-hidden">
 
-  <!-- Cinematic Preloader Overlay -->
+  <!-- LAYER 1 — Text Materialization Particle Intro Canvas -->
+  <canvas id="intro-canvas"></canvas>
+
+  <!-- Preloading & Status Overlay (Displays during initial load before Intro) -->
   <div id="loader-overlay">
     <div class="loader-glow-dot"></div>
     <div id="loader-progress" class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.3em] text-center uppercase">
-      ESTABLISHING NEURAL LINK... 0%
+      INITIALIZING SCANNERS... 0%
     </div>
   </div>
 
   <!-- Global Glassmorphic Top Navigation Bar (Shared across pinned experience & Stitch content) -->
-  <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-void-lg py-void-sm bg-white/10 backdrop-blur-md border-b border-white/10 transition-all duration-500 ease-in-out">
+  <nav class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-void-lg py-void-sm bg-white/10 backdrop-blur-md border-b border-white/10 transition-all duration-500 ease-in-out">
     <div class="font-headline-lg text-headline-lg text-primary tracking-widest uppercase">
       Aetheris
     </div>
@@ -133,7 +136,7 @@
   </nav>
 
   <!-- Sticky Side Indicator Dots (From Stitch Deep Space Navigation) -->
-  <aside class="fixed right-void-md top-1/2 -translate-y-1/2 flex flex-col items-center gap-void-sm z-50">
+  <aside class="fixed right-void-md top-1/2 -translate-y-1/2 flex flex-col items-center gap-void-sm z-40">
     <a class="text-primary scale-125 transition-all duration-700 ease-out" href="#" title="Launch">
       <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
     </a>
@@ -152,15 +155,8 @@
   <div id="hero-scroll-container">
     <div id="scroll-sequence-sticky">
       
-      <!-- LAYER 1 — Cursor-Reactive Liquid Canvas Intro & Scene 1 Morph -->
-      <canvas id="liquid-canvas"></canvas>
-
-      <!-- Preloaded Video Layers for Scrubbing -->
-      <video id="video-1" class="video-layer" muted playsinline preload="auto"></video>
-      <video id="video-2" class="video-layer" muted playsinline preload="auto"></video>
-      <video id="video-3" class="video-layer" muted playsinline preload="auto"></video>
-      <video id="video-4" class="video-layer" muted playsinline preload="auto"></video>
-      <video id="video-5" class="video-layer" muted playsinline preload="auto"></video>
+      <!-- 2D Canvas for Scroll-Scrubbed Image Sequence -->
+      <canvas id="sequence-canvas"></canvas>
 
       <!-- White Flash transition between Scene 4 and Scene 5 -->
       <div id="white-flash"></div>
