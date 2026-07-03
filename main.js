@@ -8,13 +8,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const seqCanvas = document.getElementById("sequence-canvas");
   const whiteFlash = document.getElementById("white-flash");
   
-  const textOverlays = {
-    scene1: document.getElementById("text-scene-1"),
-    scene2: document.getElementById("text-scene-2"),
-    scene3: document.getElementById("text-scene-3"),
-    scene4: document.getElementById("text-scene-4"),
-    scene5: document.getElementById("text-scene-5")
-  };
+  const textLines = [
+    // Scene 1 (0–20% scroll)
+    { el: document.querySelectorAll("#text-scene-1 .scene-text-line")[0], range: [0.02, 0.07] },
+    { el: document.querySelectorAll("#text-scene-1 .scene-text-line")[1], range: [0.07, 0.13] },
+    { el: document.querySelectorAll("#text-scene-1 .scene-text-line")[2], range: [0.13, 0.19] },
+
+    // Scene 2 (20–40% scroll)
+    { el: document.querySelectorAll("#text-scene-2 .scene-text-line")[0], range: [0.22, 0.27] },
+    { el: document.querySelectorAll("#text-scene-2 .scene-text-line")[1], range: [0.27, 0.33] },
+    { el: document.querySelectorAll("#text-scene-2 .scene-text-line")[2], range: [0.33, 0.39] },
+
+    // Scene 3 (40–55% scroll)
+    { el: document.querySelectorAll("#text-scene-3 .scene-text-line")[0], range: [0.41, 0.45] },
+    { el: document.querySelectorAll("#text-scene-3 .scene-text-line")[1], range: [0.45, 0.50] },
+    { el: document.querySelectorAll("#text-scene-3 .scene-text-line")[2], range: [0.50, 0.54] },
+
+    // Scene 4 (55–80% scroll)
+    { el: document.querySelectorAll("#text-scene-4 .scene-text-line")[0], range: [0.57, 0.63] },
+    { el: document.querySelectorAll("#text-scene-4 .scene-text-line")[1], range: [0.63, 0.70] },
+    { el: document.querySelectorAll("#text-scene-4 .scene-text-line")[2], range: [0.70, 0.77] },
+
+    // Scene 5 (80–100% scroll)
+    { el: document.querySelectorAll("#text-scene-5 .scene-text-line")[0], range: [0.82, 0.87] },
+    { el: document.querySelectorAll("#text-scene-5 .scene-text-line")[1], range: [0.87, 0.93] },
+    { el: document.querySelectorAll("#text-scene-5 .scene-text-line")[2], range: [0.93, 0.98] }
+  ];
 
   const seqCtx = seqCanvas.getContext("2d");
 
@@ -361,27 +380,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     whiteFlash.style.opacity = flashOpacity;
 
-    // 2. Midpoint Text Reveals (opacity 0 -> 1 -> 0)
-    // Scene 1: active 5% to 15% (midpoint 10%)
-    // Scene 2: active 25% to 35% (midpoint 30%)
-    // Scene 3: active 43.5% to 51.5% (midpoint 47.5%)
-    // Scene 4: active 62.5% to 72.5% (midpoint 67.5%)
-    // Scene 5: active 85% to 95% (midpoint 90%)
-    
-    toggleSceneText("scene1", progress >= 0.05 && progress <= 0.15);
-    toggleSceneText("scene2", progress >= 0.25 && progress <= 0.35);
-    toggleSceneText("scene3", progress >= 0.435 && progress <= 0.515);
-    toggleSceneText("scene4", progress >= 0.625 && progress <= 0.725);
-    toggleSceneText("scene5", progress >= 0.85 && progress <= 0.95);
-  }
-
-  function toggleSceneText(sceneKey, isVisible) {
-    const el = textOverlays[sceneKey];
-    if (isVisible) {
-      el.classList.add("visible");
-    } else {
-      el.classList.remove("visible");
-    }
+    // 2. Sequential Text Line reveals matching the active ranges
+    textLines.forEach(line => {
+      if (line.el) {
+        if (progress >= line.range[0] && progress <= line.range[1]) {
+          line.el.classList.add("visible");
+        } else {
+          line.el.classList.remove("visible");
+        }
+      }
+    });
   }
 
   // --- Layer 2: GSAP ScrollTrigger Sequence Initialization ---
@@ -424,8 +432,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const sideDots = document.querySelectorAll("aside a");
     const sections = [
       document.getElementById("hero-scroll-container"),
-      document.getElementById("stitch-content-container"),
-      document.getElementById("stitch-section")
+      document.getElementById("stitch-section"),
+      document.getElementById("chronicle-section")
     ];
 
     window.addEventListener("scroll", () => {

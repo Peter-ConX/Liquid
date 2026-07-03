@@ -161,21 +161,31 @@
       <!-- White Flash transition between Scene 4 and Scene 5 -->
       <div id="white-flash"></div>
 
-      <!-- Midpoint Scene Text Overlay Reveals -->
+      <!-- Multiple Text Overlay Reveals per Scene (Colors shifted to match visual tones) -->
       <div id="text-scene-1" class="scene-text-overlay">
-        <h2 class="scene-text-line">A Distant Call Echoes in the Void</h2>
+        <h2 class="scene-text-line text-[#B8D4E8]">It begins as it always does — with water</h2>
+        <h2 class="scene-text-line text-[#B8D4E8]">A ripple. A pulse. A signal</h2>
+        <h2 class="scene-text-line text-[#B8D4E8]">A Distant Call Echoes in the Void</h2>
       </div>
       <div id="text-scene-2" class="scene-text-overlay">
-        <h2 class="scene-text-line sans">Plunging Deep Into the Reflection</h2>
+        <h2 class="scene-text-line text-[#E8F0F5] sans">Closer now</h2>
+        <h2 class="scene-text-line text-[#E8F0F5] sans">The glass holds more than a reflection</h2>
+        <h2 class="scene-text-line text-[#E8F0F5] sans">Plunging Deep Into the Reflection</h2>
       </div>
       <div id="text-scene-3" class="scene-text-overlay">
-        <h2 class="scene-text-line">Lost In the Vastness of Open Space</h2>
+        <h2 class="scene-text-line text-[#FFFFFF]">The visor falls away</h2>
+        <h2 class="scene-text-line text-[#FFFFFF]">Nothing left but stars</h2>
+        <h2 class="scene-text-line text-[#FFFFFF]">Lost In the Vastness of Open Space</h2>
       </div>
       <div id="text-scene-4" class="scene-text-overlay">
-        <h2 class="scene-text-line sans">Pulled Beyond the Event Horizon</h2>
+        <h2 class="scene-text-line text-[#FFD9B3] sans">Something ahead is bending the light</h2>
+        <h2 class="scene-text-line text-[#FFD9B3] sans">There is no slowing down now</h2>
+        <h2 class="scene-text-line text-[#FFD9B3] sans">Pulled Beyond the Event Horizon</h2>
       </div>
       <div id="text-scene-5" class="scene-text-overlay">
-        <h2 class="scene-text-line">A New Dawn Awaits</h2>
+        <h2 class="scene-text-line text-[#F5C97B]">The pull releases</h2>
+        <h2 class="scene-text-line text-[#F5C97B]">Somewhere familiar comes into focus</h2>
+        <h2 class="scene-text-line text-[#F5C97B]">A New Dawn Awaits</h2>
       </div>
 
     </div>
@@ -197,16 +207,215 @@
         </h1>
       </section>
     </div>
+  </section>
+
+  <!-- LAYER 4 — Federal Modern Design Integration (Chronicle News Section flowing below the Cosmic navigation) -->
+  <section id="chronicle-section" class="relative z-20 w-full bg-[#fcf9f8] text-[#1c1b1b] font-body-md overflow-hidden pb-12">
+    
+    <!-- TopAppBar (Breaking News Ticker) -->
+    <div class="bg-secondary dark:bg-secondary-container text-on-secondary dark:text-on-secondary-container font-label-lg text-label-lg font-bold relative w-full h-10 flat no shadows flex items-center px-margin-desktop overflow-hidden whitespace-nowrap cursor-default">
+      <div class="flex items-center gap-2 mr-4 bg-secondary z-10 px-2 h-full absolute left-margin-desktop shadow-[10px_0_10px_-5px_#bb0024]">
+        <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">campaign</span>
+        <span class="uppercase tracking-widest text-white">BREAKING</span>
+      </div>
+      <div class="ticker-wrapper pl-32">
+        <div class="ticker-content text-white">
+          BREAKING: Global markets respond to new economic policy shifts. &nbsp;&nbsp; | &nbsp;&nbsp; Senate passes landmark technology infrastructure bill in rare bipartisan vote. &nbsp;&nbsp; | &nbsp;&nbsp; Major tech conglomerate announces restructuring amidst regulatory scrutiny.
+        </div>
+      </div>
+    </div>
+
+    <!-- TopNavBar (Chronicle Brand Menu) -->
+    <nav class="bg-background dark:bg-on-background border-b border-border-standard dark:border-outline relative w-full z-30 flat no shadows text-[#1c1b1b]">
+      <div class="max-w-[1280px] mx-auto px-margin-desktop flex flex-col items-center py-4">
+        <!-- Branding -->
+        <div class="w-full flex justify-between items-center mb-6">
+          <div class="w-24"></div> <!-- Spacer -->
+          <a class="font-display-xl text-display-xl font-black text-primary dark:text-primary-fixed tracking-tighter uppercase text-center text-[#000a1e]" href="#">
+            CHRONICLE
+          </a>
+          <div class="w-24 flex justify-end gap-4 text-primary dark:text-primary-fixed text-[#000a1e]">
+            <button class="hover:text-secondary transition-colors duration-200">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <button class="hover:text-secondary transition-colors duration-200">
+              <span class="material-symbols-outlined">person</span>
+            </button>
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="w-full flex justify-center items-center relative">
+          <ul class="flex gap-8 font-label-lg text-label-lg uppercase text-[#44474e]">
+            <li><a class="text-[#000a1e] border-b-2 border-secondary pb-1 opacity-80" href="#">Politics</a></li>
+            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">World</a></li>
+            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Business</a></li>
+            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Tech</a></li>
+            <li><a class="hover:text-[#bb0024] transition-colors duration-200" href="#">Opinion</a></li>
+          </ul>
+          <button class="absolute right-0 bg-[#002147] text-white font-label-md text-label-md uppercase px-4 py-2 hover:bg-opacity-90 transition-all shadow-sm">
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Editorial Content -->
+    <main class="max-w-[1280px] mx-auto px-margin-desktop pt-12 pb-24 text-[#1c1b1b]">
+      <!-- Featured Hero Section -->
+      <section class="mb-16 border-b border-border-standard pb-12">
+        <div class="w-full h-[600px] mb-6 overflow-hidden bg-surface-subtle">
+          <img class="w-full h-full object-cover" alt="Neoclassical facade of the White House in Washington D.C. under clear blue daytime sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXEIe2Gd1j7vR4dxMPqbq53XGKVKXihsBNrRTvheqNll0imXRYGnRtXI1rMxDQMTvI0cNgAnOkvP1VMSOmENCmvgSnIN8X0nOjhCr_SEVeizVlxmaA771E_cJLXsxiyrVJZL7RSatspzSdkfVrP7_kSWI_LREjIqRZgrfNZLOQRz9CDYCYobxrgC2J3Lzi1XV35rPDv4gAfPvzVWi9Ipecw74vxaVrQvPoafoutFeeAfrjOk6ap11DilksL9B4gOXT5-dMJUerWpY"/>
+        </div>
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="inline-block bg-[#F5F5F5] text-[#002147] px-3 py-1 font-label-md text-label-md uppercase tracking-wider mb-4 border-l-4 border-[#bb0024]">National Affairs</span>
+          <h1 class="font-display-xl text-display-xl text-[#000a1e] mb-6 leading-tight">New Horizons: A Nation Looks Up</h1>
+          <p class="font-body-lg text-body-lg text-[#44474e] max-w-3xl mx-auto leading-relaxed">
+            In a sweeping address from the Rose Garden, the administration outlines a comprehensive strategy focusing on technological innovation, infrastructure revitalization, and renewed global partnerships. Critics point to ambitious timelines, while supporters hail it as a necessary pivot for the decade ahead.
+          </p>
+          <div class="mt-6 flex items-center justify-center gap-4 text-[#74777f] font-label-md text-label-md uppercase tracking-wide">
+            <span class="text-[#000a1e] font-bold">By Eleanor Vance</span>
+            <span>•</span>
+            <span>October 24, 2024</span>
+            <span>•</span>
+            <span>7 Min Read</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two Column Layout -->
+      <div class="flex flex-col lg:flex-row gap-gutter">
+        <!-- Left Column: Secondary Stories Grid (2/3 width) -->
+        <div class="w-full lg:w-2/3">
+          <div class="flex items-center justify-between border-b-2 border-[#000a1e] pb-2 mb-8">
+            <h2 class="font-headline-md text-headline-md text-[#000a1e] uppercase tracking-tight">Latest Report</h2>
+            <a class="font-label-md text-label-md text-[#bb0024] hover:underline flex items-center gap-1 uppercase" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10">
+            <!-- Story Card 1 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Expansive solar farm panels at morning dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqqkLFVyAPeLdEr6X7QuhdRyf5_7nk0dRGfnthndf_BFjSNBwujI5gYfQT0qsY1NwGe77kL93GlXORTxt-ogt3GjM2KljieYoeBU_nMY6dpJ9PsYUYX5tuk48DHpijxzyT_DjPiSN7dTowiYDrkKcqFmGjzdvjyB2etJUqBjCG_HR3asj8fMvtOKY2hj1KcnxeFOL1Uc8YeEX6QXxEX-9FXnCtVW_WA84S3J3pEwvxp8zQ7UbIxbeqNtY1fFSlCS5JHtqan1-yUc"/>
+              </div>
+              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Tech &amp; Energy</span>
+              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Renewables Surge Past Coal in Quarterly Energy Report</h3>
+              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">Solar and wind energy output hit record highs this past quarter, officially surpassing legacy fossil fuels in several key industrial regions, signaling a permanent shift in grid reliance.</p>
+              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">2 Hours Ago</span>
+            </article>
+            <!-- Story Card 2 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Stock exchange floor with red and green numbers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAg663Oh4mH09bDs98gTUYzQXPrBREi6p4iMPyzEYPGr2nj4ahYnn_vmgCAoOId8Qlr9H-p0vPXU2uO378gfSTAl_RfDw155owMW26Zp06vGmC9LNwqaV6cFA2ZmMY6JgiaaWHCwIM-H_4I5TIOS0XNl-YpaR2CQ51HwyguifBmZhHD0TZaQWl-hyM1dYMaIrfbnmU616Slso5ncNKxJB4XnnI34AjJTF4rmXMBj-fHpwAMxEWvJVu_MV-G_XAEb6AR9zvJuLfKqw"/>
+              </div>
+              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Global Markets</span>
+              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Asian Markets Rally on De-escalation Hopes</h3>
+              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">Investors breathed a sigh of relief as diplomatic channels reopened overnight, prompting a significant bounce-back in key indices across Tokyo, Hong Kong, and Seoul.</p>
+              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">5 Hours Ago</span>
+            </article>
+            <!-- Story Card 3 -->
+            <article class="flex flex-col group cursor-pointer">
+              <div class="w-full aspect-[4/3] bg-surface-subtle mb-4 overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Futuristic autonomous electric vehicle prototype" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVuSdP_ueAD-iYtZd4xpaB2ycx0T4ibFnWvbjaD4Xgl4mEIPlvbqeBsRzp80xrMjFVxJKxyUeuQTeQgoRHVJIqpFnDiIdNj8MxDcTLtw2OKnMImU-zbjfALRc1ddyYxhRLd8_P0ifZ7H6a-eweF52a3oBgGYlm6BOlxd8EbMfQJ9eqFq375aS8gSElyiSvpRZ6ReTVntTB3qOyEAkmBQw-MCZ9-lfpihhgasW6FyVY9rn0JJa8l2W3uxzPnWY-U-Rr-iJnXCR8poc"/>
+              </div>
+              <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2">Business</span>
+              <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-[#000a1e] leading-snug mb-3 group-hover:text-[#166DFC] transition-colors">Auto Giant Unveils Fully Autonomous Fleet Strategy</h3>
+              <p class="font-body-md text-body-md text-[#44474e] line-clamp-3 mb-3">In a bid to leapfrog tech competitors, Detroit's largest automaker has committed to a multi-billion dollar pivot entirely focused on driverless, electric commercial fleets by 2030.</p>
+              <span class="mt-auto font-caption text-caption text-[#74777f] uppercase tracking-wide">1 Day Ago</span>
+            </article>
+            <!-- Story Card 4 (Text Only) -->
+            <article class="flex flex-col group cursor-pointer border-t border-border-standard pt-6 mt-2">
+              <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                  <span class="text-[#bb0024] font-label-md text-label-md uppercase tracking-wider mb-2 block">Opinion</span>
+                  <h3 class="font-headline-md text-headline-md text-[#000a1e] leading-snug mb-2 group-hover:text-[#166DFC] transition-colors">The Hidden Costs of the Suburban Resurgence</h3>
+                  <p class="font-body-md text-body-md text-[#44474e] mb-2 leading-relaxed">As remote work normalizes, the exodus from city centers continues. But the environmental and social toll of sprawling infrastructure threatens to undermine the perceived gains in quality of life.</p>
+                  <span class="font-caption text-caption text-[#74777f] uppercase tracking-wide">By Thomas Aris • Oct 23</span>
+                </div>
+                <div class="hidden md:block w-48 h-32 bg-surface-subtle shrink-0">
+                  <img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all" alt="Aerial view of suburbs roads" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkd4TXWqvVZ1zBWzd2coo6QBFlLBK8PjiTZvK9030OnvqDPZcP8qT0ctC0Khtk6Bl72xKx57zRVqshGsd9AQsUKzkeGWA0P12gpw72TkUhSdFW_brWYn0COPZ87uL5LIYiDseBHoZwBfMh0ScOXJOKb8H-MMrB6_kaiojrEsML8vkXsLKwLIbvOXsCgVvhh5pbRM-lO3kQrk6QvIfLsAJ7ByHn-ocoLP48mX1dw15s1n56KrFHmxhLNkvVTeHtnURTnMIHfarXsAs"/>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- Right Column: Sidebar (1/3 width) -->
+        <aside class="w-full lg:w-1/3 flex flex-col gap-10 border-l border-border-standard pl-0 lg:pl-gutter">
+          <!-- Trending Section -->
+          <div>
+            <div class="flex items-center gap-2 border-b-2 border-[#000a1e] pb-2 mb-6">
+              <span class="material-symbols-outlined text-[#bb0024]" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+              <h2 class="font-headline-md text-headline-md text-[#000a1e] uppercase tracking-tight">Trending Now</h2>
+            </div>
+            <ul class="flex flex-col">
+              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
+                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">1</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Supreme Court Agrees to Hear Pivotal Data Privacy Case</h4>
+                  <span class="font-caption text-caption text-[#74777f] uppercase">Politics</span>
+                </div>
+              </li>
+              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
+                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">2</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Euro Drops Below Dollar Parity for First Time in Two Years</h4>
+                  <span class="font-caption text-caption text-[#74777f] uppercase">Business</span>
+                </div>
+              </li>
+              <li class="border-b border-border-standard py-4 group cursor-pointer flex gap-4 items-start">
+                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">3</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Breakthrough in Solid-State Battery Tech Promised by Startup</h4>
+                  <span class="font-caption text-caption text-[#74777f] uppercase">Tech</span>
+                </div>
+              </li>
+              <li class="py-4 group cursor-pointer flex gap-4 items-start">
+                <span class="font-display-xl text-display-xl text-[#ebe7e7] font-black leading-none group-hover:text-[#bb0024] transition-colors">4</span>
+                <div>
+                  <h4 class="font-label-lg text-label-lg text-[#000a1e] group-hover:text-[#166DFC] transition-colors mb-1">Analysis: What the Latest Job Numbers Really Mean for the Fed</h4>
+                  <span class="font-caption text-caption text-[#74777f] uppercase">Economy</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter Signup -->
+          <div class="bg-[#F5F5F5] p-6 border-t-4 border-[#000a1e]">
+            <h3 class="font-headline-md text-headline-md text-[#000a1e] mb-2">The Daily Briefing</h3>
+            <p class="font-body-md text-body-md text-[#44474e] mb-4">Start your day with the stories you need to know. Delivered straight to your inbox.</p>
+            <form class="flex flex-col gap-3">
+              <input class="w-full bg-white border-b border-[#c4c6cf] focus:border-[#000a1e] focus:ring-0 px-3 py-2 font-body-md outline-none rounded-none placeholder-[#74777f]" placeholder="Email address" type="email"/>
+              <button class="bg-[#000a1e] text-white font-label-lg text-label-lg uppercase w-full py-3 hover:bg-opacity-90 transition-colors shadow-sm" type="button">Sign Up</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="relative z-10 w-full px-void-lg py-void-md flex flex-col md:flex-row justify-between items-center gap-void-sm border-t border-white/10 bg-transparent mt-void-huge">
-      <div class="font-label-caps text-label-caps text-primary tracking-widest uppercase opacity-80 hover:opacity-100 duration-300">
-        © 2024 AETHERIS SILENT VOYAGE. ALL RIGHTS RESERVED.
+    <footer class="bg-[#f0edec] dark:bg-surface-container-highest w-full mt-24 border-t border-border-standard dark:border-outline flat no shadows text-[#000a1e]">
+      <div class="max-w-[1280px] mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-start">
+        <div class="mb-8 md:mb-0">
+          <a class="font-headline-md text-headline-md font-bold text-[#000a1e] block mb-4 uppercase tracking-tighter" href="#">CHRONICLE</a>
+          <p class="font-body-md text-body-md text-[#44474e] max-w-xs">Precise, Authoritative, Essential. Delivering the news that shapes our world.</p>
+        </div>
+        <div class="flex flex-col gap-8 md:flex-row md:gap-16 font-label-md text-label-md text-[#44474e]">
+          <ul class="flex flex-col gap-3">
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">About Us</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Contact</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Careers</a></li>
+          </ul>
+          <ul class="flex flex-col gap-3">
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Privacy Policy</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Terms of Service</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Archive</a></li>
+          </ul>
+          <ul class="flex flex-col gap-3">
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all font-bold" href="#">Newsletters</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">Podcasts</a></li>
+            <li><a class="hover:text-[#bb0024] hover:underline transition-all" href="#">RSS Feeds</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="flex gap-void-md font-body-md text-body-md">
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Command</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">System Status</a>
+      <div class="max-w-[1280px] mx-auto px-margin-desktop py-6 border-t border-border-standard dark:border-outline font-caption text-caption text-[#74777f]">
+        © 2024 Chronicle Media Group. All rights reserved.
       </div>
     </footer>
   </section>
